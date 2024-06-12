@@ -1,29 +1,25 @@
-/* styles.css */
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* Reset default margin and padding */
-* {
+/* Common styles */
+body {
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background: linear-gradient(to right, #000428, #004e92); /* Gradient background */
+    color: white; /* Text color to contrast with the background */
 }
 
 header {
     background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
@@ -32,58 +28,109 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
-}
-
 .hero {
+    position: relative;
     text-align: center;
-    padding: 50px 0;
+    color: white;
 }
 
-.about {
-    margin-top: 30px;
-}
-
-.contact {
-    margin-top: 30px;
-}
-
-form {
-    margin-top: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input,
-form textarea {
+.hero img {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    height: auto;
 }
 
-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-form input[type="submit"]:hover {
-    background-color: #555;
+.hero-text h1 {
+    font-size: 3em;
+}
+
+.about, .portfolio, .contact {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for sections */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.about h2, .portfolio h2, .contact h1 {
+    text-align: center;
+    color: #ffffff; /* Ensure headings are visible on the new background */
+}
+
+.project {
+    margin-bottom: 20px;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* About page specific styles */
+.about-content {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for sections */
+    border-radius: 10px;
+    color: white;
+}
+
+/* Contact page specific styles */
+.contact {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for sections */
+    border-radius: 10px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
